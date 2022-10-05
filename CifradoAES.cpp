@@ -21,7 +21,7 @@ void measured_function(volatile int* var) { (*var) = 1; }
 };*/
 
 int main() {
-    unsigned char text[] = "Ya pude alicia:)";
+    unsigned char text[] = "!Es hora dormir!";
     unsigned char enc_out[80];
     unsigned char dec_out[80];
 
