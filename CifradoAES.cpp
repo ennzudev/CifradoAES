@@ -21,7 +21,7 @@ void measured_function(volatile int* var) { (*var) = 1; }
 };*/
 
 int main() {
-    unsigned char text[] = "!Es hora dormir!";
+    unsigned char text[] = "Hola soy Pablo!";
     unsigned char enc_out[80];
     unsigned char dec_out[80];
 
@@ -41,7 +41,6 @@ int main() {
         measured_function(&variable);
 
     AES_set_encrypt_key(key, 128, &enc_key);
-
     AES_encrypt(text, enc_out, &enc_key);
 
     AES_set_decrypt_key(key, 128, &dec_key);
@@ -52,7 +51,7 @@ int main() {
     for (int i = 0; *(text + i) != 0x00; i++)
         printf("%c ", *(text + i));
     printf("\nencrypted:\t");
-    for (int i = 0; *(enc_out + i) != 0x00; i++)
+    for (int i = 0; i <16; i++)
         printf("%.2X ", *(enc_out + i));
     printf("\ndecrypted:\t");
     for (int i = 0; i < 16; i++)
